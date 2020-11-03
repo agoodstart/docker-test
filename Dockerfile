@@ -5,10 +5,12 @@ FROM node:alpine
 WORKDIR /usr/app
 
 # Make sure correct files are present
-COPY ./ ./
+COPY ./package.json ./
 
 # install some dependencies
 RUN npm install
+
+COPY ./index.js ./
 
 # Run command
 CMD ["npm", "start"]
